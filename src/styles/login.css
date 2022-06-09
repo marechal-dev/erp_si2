@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.menu {
+  width: 100%;
+  height: 100px;
+  background: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px 0px;
+}
+
+.logo img {
+  padding: 16px;
+  width: 30%;
+  height: 50%;
+}
+
+div.itens a:hover {
+  color: grey;
+}
+
+.itens ul li {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.itens ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 710px) {
+  .itens ul li a span {
+    display: none;
+  }
+}
+
+.login-style {
+  background-color: #f0f0f0;
+  height: 700px;
+}
+
+.formulario {
+  width: 350px;
+  margin: auto;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.formulario h1 {
+  text-align: center;
+  font-size: 22px;
+}
+
+.card {
+  box-shadow: 1px 1px 5px #fff;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 120px;
+}
+
+.foto {
+  text-align: center;
+}
+
+.foto img {
+  width: 80px;
+  height: 60px;
+}
+
+.inserir {
+  margin-bottom: 15px;
+}
+
+.inserir p a {
+  color: black;
+  text-decoration: none;
+}
+
+.inserir>label {
+  width: 100%;
+  color: rgb(82, 81, 81);
+  display: block;
+}
+
+.inserir>input {
+  border-radius: 4px;
+  width: 100%;
+  height: 15px;
+  padding: 5px;
+}
+
+.inserir button {
+  background-color: rgb(155, 155, 155);
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  color: black;
+  border: 2px solid #555555;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.inserir a:hover {
+  color: blue;
+}
+
+.inserir button:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.footer {
+  width: 90%;
+  float: left;
+  padding: 5% 5%;
+  text-align: center;
+  background: black;
+}
+
+.social-icons a {
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 3%;
+}
+
+.social-icons a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.social-icons a:last-child {
+  margin-right: 0;
+}
+
+.copyright {
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+}
+
+.copyright a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LPRM</title>
+
+    <link rel="shortcut icon" href="./public/images/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./src/styles/login.css">
+
+    <script src="https://use.fontawesome.com/5b286af670.js"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="menu">
+            <div class="logo">
+                <a href="#"><img src="./public/images/logo.jpeg" alt="Logo LPRM"></a>
+            </div>
+            <div class="itens">
+                <ul>
+                    <li><a href="./src/pages/about.html"><i class="fa fa-info-circle "></i><span>Quem somos</span></a></li>
+                    <li><a href="./src/pages/contato.html"><i class="fa fa-phone"></i><span>Contato</span></a></li>
+                    <li><a href="#"><i class="fa fa-user "></i><span>Entrar</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class='login-style'>
+        <form class="formulario" name="loginForm">
+            <h1>
+                Login
+            </h1>
+            <div class="card">
+                <div class="foto">
+                    <img src="./public/images/login.png" />
+                </div>
+                <div class="inserir">
+                    <label for="emailInput">
+                        Email
+                    </label>
+                    <input type="email" name="emailInput" placeholder="Digite seu email" required>
+                </div>
+                <div class="inserir">
+                    <label for="passwordInput">
+                        Senha
+                    </label>
+                    <input type="password" name="passwordInput" placeholder="Digite sua senha" required>
+                </div>
+                <div class="inserir">
+                    <label>
+                        <input type="checkbox" /> Lembre-me
+                    </label>
+                </div>
+                <div class="inserir">
+                    <p><a href="./src/pages/cadastro.html">Fazer Cadastro</a></p>
+                </div>
+                <div class="inserir">
+                    <button type="submit">Acessar</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="social-icons">
+                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
+                <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+            </div>
+            <p class="copyright">
+                Copyright LPRM(c) 2021 Todos os direitos reservados.</br>
+                <a href="./src/pages/about.html">Para mais informações, clique aqui.</a>
+            </p>
+        </div>
+    </footer>
+    <script type="module" src="./src/scripts/handleLogin.js" async></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ERPM</title>
+
+    <link rel="shortcut icon" href="../../public/images/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/cadastro.css">
+
+    <script src="https://use.fontawesome.com/5b286af670.js"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="menu">
+            <div class="logo">
+                <a href="../../index.html"><img src="../../public/images/logo.jpeg" alt="Logo LPRM"></a>
+            </div>
+            <div class="itens">
+                <ul>
+                    <li><a href="./about.html"><i class="fa fa-info-circle "></i><span> Quem somos</span></a></li>
+                    <li><a href="./contato.html"><i class="fa fa-phone"></i><span> Contato </span></a></li>
+                    <li><a href="../../index.html"><i class="fa fa-user "></i><span> Entrar </span></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class='login-style'>
+        <form class="formulario" id="cadastro" name="createUserForm">
+            <div class="card">
+                <div class="inserir">
+                    <label for="firstNameInput">
+                        <span>Primeiro Nome</span>
+                    </label>
+                    <input type="text" id="nome" name="firstNameInput" placeholder="Digite seu primeiro nome" required>
+                </div>
+                <div class="inserir">
+                    <label for="lastNameInput">
+                        <span>Último Nome</span>
+                    </label>
+                    <input type="text" id="ultimo-nome" name="lastNameInput" placeholder="Digite seu último nome" required>
+                </div>
+                <div class="inserir">
+                    <label for="emailInput">
+                        <span>Email</span>
+                    </label>
+                    <input type="email" id='email' name="emailInput" placeholder="Digite seu email" required>
+                </div>
+                <div class="inserir">
+                    <label for='confirmEmailInput'>
+                        <span>Confirme seu email</span>
+                    </label>
+                    <input type="email" id='cemail' name="confirmEmailInput" placeholder="Digite novamente seu email" required>
+                </div>
+                <div class="inserir">
+                    <label for="passwordInput">
+                        <span>Crie sua Senha</span>
+                    </label>
+                    <input type="password" id="senha" name="passwordInput" placeholder="Digite sua senha">
+                </div>
+                <div class="inserir">
+                    <button type="submit" value="sign up">Criar conta</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+            <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
+            <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+        </div>
+        <p class="copyright">
+            Copyright LPRM(c) 2022 Todos os direitos reservados.</br>
+            <a href="contato.html">Para mais informações, clique aqui.</a>
+        </p>
+    </footer>
+    <script type="module" src="../scripts/handleCreateNewUser.js" async></script>
+</body>
