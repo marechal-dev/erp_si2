@@ -1,10 +1,10 @@
 # LPRM - ERP
 ## Trabalho de Sistemas para Internet 2
 Alunos participantes:
-- Luccas R. Hoff - 
-- Marcos Barbosa - 
+- Luccas R. Hoff - 140635
+- Marcos Barbosa - 140665
 - Pietro Vieira - 143382
-- Rafael Lemos - 
+- Rafael Lemos - 142400
 
 ### O que é
 O tipo de sistema escolhido foi o ERP (*Enterprise Resource Planning*), o qual tem como função automatizar processos e atividades de venda, finanças, contabilidade, estoque, compras...
