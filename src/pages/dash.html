@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LPRM</title>
+
+    <link rel="shortcut icon" href="../../public/images/logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/dash.css">
+
+    <script src="https://use.fontawesome.com/5b286af670.js"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="menu">
+            <div class="logo">
+                <a href="#"> <img src="../../public/images/logo.jpeg" alt="Logo"></a>
+            </div>
+            <div class="itens">
+                <ul>
+                    <li id="sair"><a href="/index.html"><i class="fa fa-user "></i> Sair </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="menu-vertical">
+        <nav>
+            <ul class="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Estoque</a></li>
+                <li><a href="#">Reposição de Estoque</a>
+                <li><a href="#">Vendas</li>
+                <li><a href="#">Vendedores</li>
+                <li><a href="#">Versão 1.0</li>
+                </li>
+            </ul>
+        </nav>
+
+        <section class='section-2'>
+            <p>Produtos</p>
+            <div class="btn">
+                <input type="button" value="inserir" class="btn-inserir" />
+                <input type="button" value="Editar" class="btn-editar">
+                <input type="text" class="txtBusca" placeholder="Pesquisar..." />
+            </div>
+        </section>
+
+        <section class="section-3">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Preço</th>
+                    <th>Qntd. Estoque</th>
+                    <th>Criado Em</th>
+                    <th>Soma total $</th>
+                    <th>Excluir</th>
+                    <th>Editar</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Caixas</td>
+                    <td>R$ 100,00</td>
+                    <td>50</td>
+                    <td>20/06/2021</td>
+                    <td>R$ 5.000,00</td>
+                    <td><input type="button" value="excluir" class="btn-excluir"></td>
+                    <td><input type="button" value="Editar" class="btn-editar"></td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Canetas</td>
+                    <td>R$ 400,00</td>
+                    <td>700</td>
+                    <td>14/02/2022</td>
+                    <td>R$ 280.000,00</td>
+                    <td><input type="button" value="excluir" class="btn-excluir"></td>
+                    <td><input type="button" value="Editar" class="btn-editar"></td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Impressora</td>
+                    <td>R$ 4.000,00</td>
+                    <td>5</td>
+                    <td>19/04/2022</td>
+                    <td>R$ 20.000,00</td>
+                    <td><input type="button" value="excluir" class="btn-excluir"></td>
+                    <td><input type="button" value="Editar" class="btn-editar"></td>
+                </tr>
+            </table>
+        </section>
+    </section>
+
+    <script src="../scripts/handleLogout.js"></script>
+</body>
+
+</html>
