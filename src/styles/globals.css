@@ -38,6 +38,10 @@ a {
   color: black;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 ul {
   list-style: none;
 }
@@ -89,11 +93,6 @@ ul {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
-}
-
-.user-info__user-name:hover {
-  text-decoration: underline;
 }
 
 .navigation-menu {
