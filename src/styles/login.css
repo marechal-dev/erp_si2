@@ -165,3 +165,7 @@ div.itens a:hover {
   color: rgba(255, 255, 255, 0.7);
   font-size: 20px;
 }
+
+@media only screen and (max-device-width: 900px) {
+  /* .menu { width:100%; } */
+  }
