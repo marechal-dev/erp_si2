@@ -1,26 +1,13 @@
 :root {
   --white: #fff;
 
-  --blue-100: #1e90ff;
-  --blue-200: #1570bd;
-  --blue-300: #0047ab;
-  --blue-400: #192bc2;
-  --blue-800: #0000ff;
-
-  --gray-100: #e1e1e6;
-  --gray-300: #c4c4cc;
-  --gray-400: #8d8d99;
-  --gray-600: #323238;
-  --gray-700: #29292e;
-  --gray-800: #202024;
-  --gray-900: #121214;
-
-  --red-500: #f75a68;
+  --menu-bg-color: rgba(255, 138, 0, 0.2);
+  --totalizers-bg-color: rgba(217, 217, 217, 0.2);
 }
 
 :focus {
   outline: transparent;
-  box-shadow: 0 0 0 2px var(--blue-400);
+  box-shadow: 0 0 0 2px black;
 }
 
 * {
@@ -29,8 +16,15 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
+
+  display: grid;
+  grid-template-columns: 20rem 1fr;
 }
 
 body, input, textarea, button {
@@ -39,33 +33,92 @@ body, input, textarea, button {
   font-size: 1rem;
 }
 
-.input {
-  background: transparent;
-  border: 2px solid var(--gray-700);
-  border-radius: 6px;
-
-  padding: 0.25rem;
-}
-
-.button {
-  background-color: var(--blue-400);
-  
-  padding: 1rem 1.5rem;
-  
-  border: 0;
-  border-radius: 8px;
-  
-  font-weight: bold;
-  color: var(--white);
-
-  cursor: pointer;
-}
-
-.anchor {
+a {
   text-decoration: none;
-  color: var(--white);
+  color: black;
 }
 
-.copyrightNotice {
+a:hover {
+  text-decoration: underline;
+}
 
+ul {
+  list-style: none;
+}
+
+.aside-menu {
+  height: 100vh;
+
+  text-align: center;
+
+  padding: 2rem 4rem;
+
+  background-color: var(--menu-bg-color);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.aside-menu__logo {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2.5rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.aside-menu__divider {
+  width: 100%;
+  border-color: black;
+}
+
+.user-info {
+  margin-top: 1.05rem;
+  margin-bottom: 1.05rem;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user-info__icon {
+  height: 2rem;
+}
+
+.user-info__user-name {
+  font-size: 1.25rem;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navigation-menu {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  height: 100%;
+}
+
+.navigation-menu ul {
+  height: 100%;
+}
+
+.navigation-menu__item {
+  margin-bottom: 1.05rem;
+
+  font-size: 1.375rem;
+}
+
+.aside-menu__app-version {
+  margin-top: 1.05rem;
+}
+
+.main-area {
+  height: 100%;
+  width: 100%;
+
+  padding: 3.4rem 5.6rem;
 }

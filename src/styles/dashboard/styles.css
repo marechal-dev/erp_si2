@@ -1,0 +1,32 @@
+.totalizers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12.5rem;
+}
+
+.totalizer-container {
+  max-width: 20rem;
+  max-height: 11.25rem;
+
+  background-color: var(--totalizers-bg-color);
+
+  border: 1px solid black;
+  border-radius: 15px;
+
+  padding: 3.45rem 5rem;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.totalizer-container__title {
+  font-size: 1.25rem;
+}
+
+.totalizer-container__value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+}

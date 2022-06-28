@@ -31,7 +31,9 @@ export class LocalStorageManager {
   }
 
   /**
-   * Drops **ALL** "tables" from the Local Storage
+   * Drops **ALL** tables from the Local Storage
+   * 
+   * Use with f*cking caution.
    */
   static dropAllTables() {
     localStorage.clear();
@@ -47,7 +49,7 @@ export class LocalStorageManager {
    * @returns {Array<any>}
    */
    static getAll(tableName) {
-    const data = this.#getTable(tableName);
+    const data = this.#getTableData(tableName);
 
     return data;
   }
@@ -56,10 +58,10 @@ export class LocalStorageManager {
    * Inserts a single or a bulk of itens on a given table
    * 
    * @param {string} tableName 
-   * @param {Array} items 
+   * @param {Array<any>} items 
    */
   static insert(tableName, ...items) {
-    const tableData = JSON.parse(localStorage.getItem(tableName));
+    const tableData = this.#getTableData(tableName);
 
     items.forEach((item) => {
       tableData.push(item);
@@ -77,7 +79,7 @@ export class LocalStorageManager {
    * @param {Array} items 
    */
   static remove(tableName, ...items) {
-    const tableData = Array(JSON.parse(localStorage.getItem(tableName)));
+    const tableData = this.#getTableData(tableName);
 
     items.forEach((item) => {
       const toRemoveItemIndex = tableData.indexOf(item);
@@ -92,9 +94,10 @@ export class LocalStorageManager {
 
   /**
    * @param {string} tableName
-   * @param {any} item
+   * @param {string} itemIdentifier
+   * @param {object} data
    */
-  static edit(tableName, item) {
+  static edit(tableName, itemIdentifier, data) {
     throw new Error('Not implemented!');
   }
 
@@ -103,7 +106,7 @@ export class LocalStorageManager {
    * @param {string} tableName
    */
    static tableExists(tableName) {
-    const doesTableExist = Boolean(this.#getTable(tableName));
+    const doesTableExist = Boolean(this.#getTableData(tableName));
 
     if (doesTableExist) {
       return true;
@@ -114,13 +117,14 @@ export class LocalStorageManager {
 
   // Private Methods
   /**
-   * @param {string} tableName 
+   * @private
+   * @param {string} tableName
    */
-  static #getTable(tableName) {
+  static #getTableData(tableName) {
     const retrievedTable = JSON.parse(localStorage.getItem(tableName));
 
     if (!retrievedTable) {
-      return null;
+      throw new Error('Table does not exists!');
     }
 
     return retrievedTable;

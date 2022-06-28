@@ -22,7 +22,7 @@ loginForm.addEventListener('submit', (event) => {
     const isPassowrdCorret = userData.password === passwordInput.value;
 
     if (isPassowrdCorret) {
-      alert('Dale');
+      window.location.href = '../pages/dashboard.html';
     } else {
       alert('Senha incorreta, tente novamente!');
     }
