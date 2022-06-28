@@ -73,8 +73,7 @@ ul {
 }
 
 .user-info {
-  margin-top: 1.05rem;
-  margin-bottom: 1.05rem;
+  margin: 1.05rem auto;
 
   display: flex;
   flex-direction: row;

@@ -49,8 +49,8 @@ export class LocalStorageManager {
    * @returns {Array<any>}
    */
    static getAll(tableName) {
-    const data = this.#getTableData(tableName);
-
+    const data = this.#getTableData(tableName) || [];
+    
     return data;
   }
 
@@ -124,7 +124,7 @@ export class LocalStorageManager {
     const retrievedTable = JSON.parse(localStorage.getItem(tableName));
 
     if (!retrievedTable) {
-      throw new Error('Table does not exists!');
+      return null;
     }
 
     return retrievedTable;
