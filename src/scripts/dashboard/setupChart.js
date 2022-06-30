@@ -3,6 +3,8 @@
 import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js';
 
 const chartContext = document.querySelector('#sells-data-chart').getContext('2d');
+const chartContext2 = document.querySelector('#sellss-data-chart').getContext('2d');
+const chartContext3 = document.querySelector('#sellsss-data-chart').getContext('2d');
 const sellsData = LocalStorageManager.getAll('sells') || [];
 const monthsLabels = [];
 const fourLastMonthsTotalValues = [100, 200, 300, 400];
@@ -76,6 +78,8 @@ const chartConfig = {
 };
 
 const chart = new Chart(chartContext, chartConfig);
+const chart2 = new Chart(chartContext2, chartConfig);
+const chart3 = new Chart(chartContext3, chartConfig);
 
 function getMonthName(month) {
   switch (month) {
