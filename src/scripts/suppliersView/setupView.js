@@ -25,8 +25,8 @@ window.addEventListener('load', () => {
       idCell.textContent = supplier.id;
       socialReasonCell.textContent = supplier.socialReason;
       createdAtCell.textContent = Intl.DateTimeFormat('pt-BR').format(new Date(supplier.createdAt));
-      editButtonCell.insertAdjacentHTML('afterbegin', `<td><button data-js-identifier="editButton" id="${supplier.id}" type="button">Editar</button></td>`);
-      deleteButtonCell.insertAdjacentHTML('afterbegin', `<td><button data-js-identifier="removeButton" id="${supplier.id}" type="button">Remover</button></td>`);
+      editButtonCell.insertAdjacentHTML('afterbegin', `<td>${generateButton(String(supplier.id), 'editButton', 'Editar')}</td>`);
+      deleteButtonCell.insertAdjacentHTML('afterbegin', `<td>${generateButton(String(supplier.id), 'removeButton', 'Remover')}</td>`);
     });
   }
 
@@ -61,3 +61,13 @@ window.addEventListener('load', () => {
     });
   });
 });
+
+/**
+ * 
+ * @param {string} id 
+ * @param {string} jsIdentifier
+ * @param {string} textContent
+ */
+function generateButton(id, jsIdentifier, textContent) {
+  return `<button data-js-identifier="${jsIdentifier}" id="${id}" type="button">${textContent}</button>`;
+}
