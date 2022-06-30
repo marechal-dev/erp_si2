@@ -9,9 +9,11 @@ const addSupplierButton = document.querySelector('[data-js-identifier=addSupplie
 addSupplierButton.addEventListener('click', () => {
   const supplierName = prompt('Digite a razão social do novo Fornecedor');
 
-  const newSupplier = new Supplier(supplierName);
+  if (supplierName) {
+    const newSupplier = new Supplier(supplierName);
 
-  LocalStorageManager.insert('suppliers', newSupplier);
+    LocalStorageManager.insert('suppliers', newSupplier);
 
-  window.location.reload();
+    window.location.reload();
+  } 
 });
