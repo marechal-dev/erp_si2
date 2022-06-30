@@ -1,0 +1,21 @@
+#suppliers-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#suppliers-table td, #suppliers-table tr {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#suppliers-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#suppliers-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgba(255, 138, 0, 0.2);
+  color: black;
+}

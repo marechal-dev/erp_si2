@@ -2,10 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12.5rem;
+
+  width: 100%;
 }
 
 .totalizer-container {
-  max-width: 20rem;
+  width: 100%;
   max-height: 11.25rem;
 
   background-color: var(--totalizers-bg-color);
@@ -13,7 +15,7 @@
   border: 1px solid black;
   border-radius: 15px;
 
-  padding: 3.45rem 5rem;
+  padding: 3rem 4rem;
 
   text-align: center;
 
@@ -29,4 +31,16 @@
   font-size: 1.5rem;
   font-weight: bold;
   font-style: italic;
+}
+
+.main-area__general-information {
+  margin-top: 1rem;
+
+  position: relative;
+  width: 25vw;
+
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  gap: 2rem;
 }

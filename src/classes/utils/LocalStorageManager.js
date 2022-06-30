@@ -49,8 +49,8 @@ export class LocalStorageManager {
    * @returns {Array<any>}
    */
    static getAll(tableName) {
-    const data = this.#getTableData(tableName);
-
+    const data = this.#getTableData(tableName) || [];
+    
     return data;
   }
 
@@ -94,11 +94,25 @@ export class LocalStorageManager {
 
   /**
    * @param {string} tableName
+   * @param {string} itemIdentifierKeyName
    * @param {string} itemIdentifier
    * @param {object} data
    */
-  static edit(tableName, itemIdentifier, data) {
-    throw new Error('Not implemented!');
+  static edit(tableName, itemIdentifierKeyName, itemIdentifier, data) {
+    const tableData = this.#getTableData(tableName);
+    const toEditEntry = tableData.find((item) => item[itemIdentifierKeyName] === itemIdentifier);
+
+    for (let key in data) {
+      for (let toEditKey in toEditEntry) {
+        if (key === toEditKey) {
+          toEditEntry[toEditKey] = data[key];           
+        }
+      }
+    }
+
+    localStorage.setItem('suppliers', JSON.stringify(tableData));
+    
+    return;
   }
 
   // Utils Methods
@@ -119,12 +133,13 @@ export class LocalStorageManager {
   /**
    * @private
    * @param {string} tableName
+   * @return {any[]}
    */
   static #getTableData(tableName) {
     const retrievedTable = JSON.parse(localStorage.getItem(tableName));
 
     if (!retrievedTable) {
-      throw new Error('Table does not exists!');
+      return null;
     }
 
     return retrievedTable;
