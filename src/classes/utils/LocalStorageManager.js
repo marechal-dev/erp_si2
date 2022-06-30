@@ -94,11 +94,25 @@ export class LocalStorageManager {
 
   /**
    * @param {string} tableName
+   * @param {string} itemIdentifierKeyName
    * @param {string} itemIdentifier
    * @param {object} data
    */
-  static edit(tableName, itemIdentifier, data) {
-    throw new Error('Not implemented!');
+  static edit(tableName, itemIdentifierKeyName, itemIdentifier, data) {
+    const tableData = this.#getTableData(tableName);
+    const toEditEntry = tableData.find((item) => item[itemIdentifierKeyName] === itemIdentifier);
+
+    for (let key in data) {
+      for (let toEditKey in toEditEntry) {
+        if (key === toEditKey) {
+          toEditEntry[toEditKey] = data[key];           
+        }
+      }
+    }
+
+    localStorage.setItem('suppliers', JSON.stringify(tableData));
+    
+    return;
   }
 
   // Utils Methods
@@ -119,6 +133,7 @@ export class LocalStorageManager {
   /**
    * @private
    * @param {string} tableName
+   * @return {any[]}
    */
   static #getTableData(tableName) {
     const retrievedTable = JSON.parse(localStorage.getItem(tableName));
