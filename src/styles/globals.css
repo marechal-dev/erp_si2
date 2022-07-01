@@ -1,7 +1,7 @@
 :root {
   --white: #fff;
 
-  --menu-bg-color: rgba(255, 138, 0, 0.2);
+  --menu-bg-color: rgb(99, 99, 99);
   --totalizers-bg-color: rgba(217, 217, 217, 0.2);
 }
 
@@ -126,4 +126,40 @@ ul {
 
 .disabled {
   visibility: hidden;
+}
+
+.btn-add {
+  border-color: green;
+  background: linear-gradient(to bottom, rgb(0, 201, 0) 5%, green 100%);
+  box-shadow: inset 0px 1px 0px 0px #fff4f3;
+  color: #fff;
+  text-shadow: 0px 1px 0px rgb(0, 201, 0);
+  height: 30px;
+  width: 90px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-edit {
+  border-color: darkgoldenrod;
+  background: linear-gradient(to bottom, rgb(241, 181, 28) 5%, rgb(160, 115, 0) 100%);
+  box-shadow: inset 0px 1px 0px 0px #fff4f3;
+  color: #fff;
+  text-shadow: 0px 1px 0px rgb(0, 201, 0);
+  height: 30px;
+  width: 90px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-remove {
+  border-color: #f61f0e;
+  background: linear-gradient(to bottom, #fca8a1 5%, #f61f0e 100%);
+  box-shadow: inset 0px 1px 0px 0px #fff4f3;
+  color: #fff;
+  text-shadow: 0px 1px 0px #528009;
+  height: 30px;
+  width: 90px;
+  border-radius: 10px;
+  cursor: pointer;
 }
