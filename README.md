@@ -19,6 +19,7 @@ Os protótipos de interface foram criados no Figma, o qual pode ser acessado [cl
 ### Funcionalidades desenvolvidas
 1. Login
 2. Cadastro de novo usuário
+3. Criar novos vendedores (usuários do sistema)
 
 ### Funcionalidades restantes
 - Estoque:
@@ -28,8 +29,6 @@ Os protótipos de interface foram criados no Figma, o qual pode ser acessado [cl
   - Editar produtos
 - Vendas
   - Realizar vendas para clientes da empresa
-- Vendedores
-  - Criar novos vendedores (usuários do sistema)
 - Reposição de estoque
   - Repor itens no estoque
 - Clientes
