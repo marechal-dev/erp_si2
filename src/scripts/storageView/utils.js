@@ -27,10 +27,7 @@ function appendToProductsTableBody(tableElement, productsData) {
     idCell.textContent = product.id;
     titleCell.textContent = product.title;
     quantityCell.textContent = product.quantity;
-    priceCell.textContent = Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(Number(product.price)); // Format the price using the Intl currency formatter
+    priceCell.textContent = Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(Number(product.price)); // Format the price using the Intl currency formatter
     descriptionCell.textContent = product.description;
     createdAtCell.textContent = Intl.DateTimeFormat('pt-BR').format(new Date(product.createdAt)); // Format the date value using Intl formatter
     modifiedAtCell.textContent = product.modifiedAt ? Intl.DateTimeFormat('pt-BR').format(new Date(product.modifiedAt)) : '---'; // Format the date value using Intl formatter
