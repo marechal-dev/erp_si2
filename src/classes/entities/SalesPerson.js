@@ -8,9 +8,9 @@ export class SalesPerson extends User {
   transactions;
 
   /**
-   * @param {string} name 
-   * @param {string} email 
-   * @param {string} password 
+   * @param {string} name
+   * @param {string} email
+   * @param {string} password
    */
   constructor(name, email, password) {
     super(name, email, password);

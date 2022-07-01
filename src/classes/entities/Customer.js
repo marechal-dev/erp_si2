@@ -12,6 +12,5 @@ export class Customer {
     this.id = crypto.randomUUID();
     this.name = name;
     this.createdAt = new Date();
-    this.modifiedAt = null;
   }
 }

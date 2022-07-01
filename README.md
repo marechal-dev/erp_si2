@@ -17,22 +17,20 @@ O tipo de sistema escolhido foi o ERP (*Enterprise Resource Planning*), o qual t
 Os protótipos de interface foram criados no Figma, o qual pode ser acessado [clicando aqui](https://www.figma.com/file/xt11G5eRqHzFQquJmKjU5s/ERP---SI2?node-id=0%3A1)
 
 ### Funcionalidades desenvolvidas
-1. Login
+1. Login e Logout
 2. Cadastro de novo usuário
 3. Criar novos vendedores (usuários do sistema)
-
-### Funcionalidades restantes
-- Estoque:
+4. Estoque:
   - Listar produtos
   - Inserir produto
   - Excluir produto
   - Editar produtos
-- Vendas
-  - Realizar vendas para clientes da empresa
-- Reposição de estoque
-  - Repor itens no estoque
-- Clientes
+5. Clientes
   - Listar clientes
   - Cadastrar clientes
   - Editar clientes
   - Remover clientes
+### Funcionalidades restantes
+- Vendas
+  - Realizar vendas para clientes da empresa
+
