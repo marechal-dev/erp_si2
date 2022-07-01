@@ -9,12 +9,11 @@ export class SalesPerson extends User {
 
   /**
    * @param {string} name 
-   * @param {string} lastName 
    * @param {string} email 
    * @param {string} password 
    */
-  constructor(name, lastName, email, password) {
-    super(name, lastName, email, password);
+  constructor(name, email, password) {
+    super(name, email, password);
     this.transactions = [];
   }
 }

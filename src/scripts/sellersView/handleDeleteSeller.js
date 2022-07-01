@@ -7,11 +7,18 @@ import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js'
  * @param {Event} event 
  */
 export function handleDeleteSeller(event) {
-  const itemId = event.target.id;
-  const sellersData = LocalStorageManager.getAll('seller');
-  const toRemoveItem = sellersData.find((seller) => seller.id === itemId);
+  const sellerId = event.target.id;
+  const toRemoveSeller = LocalStorageManager.getAll('seller').find((seller) => seller.id === sellerId);
 
-  LocalStorageManager.remove('seller', toRemoveItem);
+  const wantToRemoveSeller = confirm(`Deseja remover o vendedor ${toRemoveSeller.name}`);
 
-  window.location.reload();
+  if (wantToRemoveSeller) {
+    alert(`Vendedor ${toRemoveSeller.name} removido com sucesso`);
+
+    LocalStorageManager.remove('seller', toRemoveSeller);
+  
+    window.location.reload();
+  } else {
+    return;
+  }
 }

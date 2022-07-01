@@ -7,13 +7,40 @@ import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js'
  * @param {string} customerId 
  */
 export function handleEditCustomer(customerId) {
-  const customerNewName = prompt('Por favor, insira o novo nome do cliente:');
+  const customerData = LocalStorageManager.getAll('customers').find((customer) => customer.id === customerId);
 
-  if (customerNewName) {
-    const payload = {
-      name: customerNewName,
-    };
+  let payload = {
+    name: '',
+  };
+  
+  alert('ATENÇÃO: Deixe o campo em branco caso não deseje alterar.');
+  
+  while (true) {
+    const namePromptValue = prompt('Por favor, insira o novo nome do cliente:');
 
-    LocalStorageManager.edit('customers', 'id', customerId, payload);
+    if (namePromptValue) {
+      if (namePromptValue.length < 5) {
+        alert('Por favor, insira um nome válido (mais que 5 caracteres).');
+        continue;
+      }
+
+      payload.name = namePromptValue;
+
+      alert(`Cliente ${customerData.name} alterado com sucesso!`);
+
+      LocalStorageManager.edit('customers', 'id', customerId, payload);
+
+      break;
+    } else {
+      payload.name = customerData.name;
+
+      alert(`Cliente ${customerData.name} alterado com sucesso!`);
+
+      LocalStorageManager.edit('customers', 'id', customerId, payload);
+
+      break;
+    }
   }
+
+  window.location.reload();
 }

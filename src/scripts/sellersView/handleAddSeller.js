@@ -3,25 +3,67 @@
 import { SalesPerson } from '../../classes/entities/SalesPerson.js';
 import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js';
 
-const sellerNameInput = document.querySelector('#seller-name-input');
-const sellerLastNameInput = document.querySelector('#seller-last-name-input');
-const sellerEmailInput = document.querySelector('#seller-email-input');
-const sellerPasswordInput = document.querySelector('#seller-password-input');
+import { emailIsValid } from '../utils/validateEmail.js';
 
 /**
  * Handles the logic to add a new seller
- * @param {Event} event 
- * @returns 
+ * @returns {void}
  */
-export function handleAddSeller(event) {
-  event.preventDefault();
+export function handleAddSeller() {
+  let newSellerName;
+  let newSellerEmail;
+  let newSellerPassword;
 
-  if (!sellerNameInput.value || !sellerLastNameInput.value || !sellerEmailInput.value || !sellerPasswordInput.value) {
-    alert('Por favor, revise os campos');
-    return;
+  while (true) {
+    const namePromptValue = prompt('Insira o nome do novo vendedor (maior que 5 caracteres):');
+
+    if (!namePromptValue || namePromptValue.length < 5) {
+      alert('Por favor, insira um nome válido!');
+      continue;
+    }
+
+    if (namePromptValue) {
+      newSellerName = namePromptValue;
+      break;
+    }
   }
 
-  const newSeller = new SalesPerson(sellerNameInput.value, sellerLastNameInput.value, sellerEmailInput.value, sellerPasswordInput.value);
+  while (true) {
+    const emailPromptValue = prompt('Insira o email do novo vendedor (maior que 5 caracteres):');
+
+    if (!emailPromptValue || emailPromptValue.length < 5) {
+      alert('Por favor, insira um email válido!');
+      continue;
+    }
+
+    const emailIsNotValid = !emailIsValid(emailPromptValue);
+    if (emailIsNotValid) {
+      alert('Por favor, insira um email válido!');
+      continue;
+    }
+
+    if (emailPromptValue) {
+      newSellerEmail = emailPromptValue;
+      break;
+    }
+  }
+
+  while (true) {
+    const passwordPromptValue = prompt('Insira a senha do novo vendedor (maior que 5 caracteres):');
+
+    if (!passwordPromptValue || passwordPromptValue.length < 5) {
+      alert('Por favor, insira uma senha válida!');
+      continue;
+    }
+
+    if (passwordPromptValue) {
+      newSellerPassword = passwordPromptValue;
+      break;
+    }
+  }
+  
+
+  const newSeller = new SalesPerson(newSellerName, newSellerLastName, newSellerEmail, newSellerPassword);
   LocalStorageManager.insert('sellers', newSeller);
 
   alert(`Vendedor ${newSeller.name} adicionado com sucesso!`);

@@ -3,7 +3,8 @@
 import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js';
 
 import { populateSalesPersonTable } from './populateSalesPersonTable.js';
-import { handleOpenSellerActionModal } from './handleOpenSellerActionModal.js';
+import { handleAddSeller } from './handleAddSeller.js';
+import { handleEditSeller } from './handleEditSeller.js';
 import { handleDeleteSeller } from './handleDeleteSeller.js';
 
 window.addEventListener('load', () => {
@@ -23,10 +24,10 @@ window.addEventListener('load', () => {
   const editSellerButtonList = document.querySelectorAll('[data-js-identifier="editButton"]');
   const removeSellerButtonList = document.querySelectorAll('[data-js-identifier="removeButton"]');
 
-  addSellerButton.addEventListener('click', () => handleOpenSellerActionModal(false, ''));
+  addSellerButton.addEventListener('click', (event) => handleAddSeller(event));
 
   editSellerButtonList.forEach((button) => {
-    button.addEventListener('click', (event) => handleOpenSellerActionModal(true, event.target.id));
+    button.addEventListener('click', (event) => handleEditSeller(event));
   });
 
   removeSellerButtonList.forEach((button) => {
