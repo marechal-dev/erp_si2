@@ -23,27 +23,4 @@ export class User {
     this.createdAt = new Date();
     this.modifiedAt = null;
   }
-
-  /**
-   * @param {string} newEmail
-   */
-  setEmail(newEmail) {
-    const emailIsValid = this.#validateEmail(newEmail);
-    
-    if (emailIsValid) {
-      this.email = newEmail;
-    } else {
-      throw new Error("Invalid Email");
-    }
-
-    return this;
-  }
-
-  /**
-   * @param {string} email 
-   * @returns {boolean}
-   */
-  #validateEmail(email) {
-    return Boolean(email.includes("@") && email.includes(".com") && email.length > 0);
-  }
 }

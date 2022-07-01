@@ -4,8 +4,6 @@ import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js'
 
 import { Product } from '../../classes/entities/Product.js';
 
-import { appendToProductsTableBody } from './utils.js';
-
 const productTitle = document.querySelector('[data-id="productTitleInput"]');
 const productPrice = document.querySelector('[data-id="productPriceInput"]');
 const productQuantity = document.querySelector('[data-id="productQuantityInput"]');
@@ -35,5 +33,5 @@ insertProductButton.addEventListener('click', () => {
 
   alert('Produto inserido com sucesso!');
 
-  appendToProductsTableBody(newProduct);
+  window.location.reload();
 });

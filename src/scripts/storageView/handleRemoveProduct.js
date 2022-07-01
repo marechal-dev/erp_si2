@@ -14,6 +14,6 @@ deleteProductButtonsList.forEach((button) => {
 
     alert(`Item ${itemToRemove.title} removido com sucesso`);
 
-    location.reload();
+    window.location.reload();
   });
 })

@@ -18,6 +18,6 @@ updateItemButtonsList.forEach((button) => {
 
     alert(`Item ${itemToEdit.title} alterado com sucesso!`);
 
-    location.reload();
+    window.location.reload();
   });
 });

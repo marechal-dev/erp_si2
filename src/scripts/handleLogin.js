@@ -5,8 +5,15 @@ import { LocalStorageManager } from "../classes/utils/LocalStorageManager.js";
 const loginForm = document.forms.loginForm;
 
 window.addEventListener('load', () => {
-  if (!LocalStorageManager.tableExists('users')) {
+  const usersTableDoesNotExist = !LocalStorageManager.tableExists('users');
+  const loggedInUserTableDoesNotExist = !LocalStorageManager.tableExists('loggedInUser');
+
+  if (usersTableDoesNotExist) {
     LocalStorageManager.createTable('users');
+  }
+
+  if (loggedInUserTableDoesNotExist) {
+    LocalStorageManager.createTable('loggedInUser');
   }
 });
 
@@ -22,6 +29,7 @@ loginForm.addEventListener('submit', (event) => {
     const isPassowrdCorret = userData.password === passwordInput.value;
 
     if (isPassowrdCorret) {
+      LocalStorageManager.insert('loggedInUser', userData);
       window.location.href = '../pages/dashboard.html';
     } else {
       alert('Senha incorreta, tente novamente!');
