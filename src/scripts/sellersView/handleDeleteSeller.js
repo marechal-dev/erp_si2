@@ -3,7 +3,7 @@
 import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js';
 
 /**
- * 
+ * Deletes a Sales Person by ID
  * @param {Event} event 
  */
 export function handleDeleteSeller(event) {

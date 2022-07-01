@@ -3,13 +3,14 @@
 import { generateButton } from '../utils/generateButton.js';
 
 /**
+ * Populates the table of Sales Person View with data from LocalStorage
  * 
  * @param {HTMLTableElement} tableElement 
  * @param {Array<SalesPerson>} salesPersonData
  */
 export function populateSalesPersonTable(tableElement, salesPersonData) {
   salesPersonData.forEach((salesPerson) => {
-    const newRow = tableElement.insertRow(-1); // Insert a new row
+    const newRow = tableElement.insertRow(-1); // Insert a new row at the end of the table (-1)
     const nameCell = newRow.insertCell(0); // Create the cells to hold data
     const lastName = newRow.insertCell(1);
     const emailCell = newRow.insertCell(2);

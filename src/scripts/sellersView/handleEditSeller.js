@@ -1,17 +1,27 @@
 'use strict';
 
-import { SalesPerson } from '../../classes/entities/SalesPerson.js';
 import { LocalStorageManager } from '../../classes/utils/LocalStorageManager';
 
-import { handleCloseSellerActionModal } from './handleCloseSellerActionModal.js';
+import { handleChangeSellerActionModalState } from './handleCloseSellerActionModal.js';
+
+const sellerNameInput = document.querySelector('#seller-name-input');
+const sellerLastNameInput = document.querySelector('#seller-last-name-input');
+const sellerEmailInput = document.querySelector('#seller-email-input');
+const sellerPasswordInput = document.querySelector('#seller-password-input');
 
 /**
  * 
- * @param {string} sellerId
- * @param {SalesPerson} sellerNewData 
+ * @param {Event} event
  */
-export function handleEditSeller(sellerId, sellerNewData) {
-  LocalStorageManager.edit('sellers', 'id', sellerId, sellerNewData);
-  handleCloseSellerActionModal();
+export function handleEditSeller(event) {
+  const sellerNewData = {
+    name: sellerNameInput.value,
+    lastName: sellerLastNameInput.value,
+    email: sellerEmailInput.value,
+    password: sellerPasswordInput.value,
+  };
+
+  LocalStorageManager.edit('sellers', 'id', event.target.id, sellerNewData);
+  handleChangeSellerActionModalState();
   window.location.reload();
 }

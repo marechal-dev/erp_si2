@@ -2,6 +2,10 @@
 
 const actionSellerModal = document.querySelector('#action-seller-modal');
 
-export function handleCloseSellerActionModal() {
+/**
+ * A simple function used to toggle the state of the modal, from disabled to enabled
+ * and vice-versa
+ */
+export function handleChangeSellerActionModalState() {
   actionSellerModal.toggleAttribute('.disabled');
 }
