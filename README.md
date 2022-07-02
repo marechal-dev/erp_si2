@@ -16,6 +16,11 @@ O tipo de sistema escolhido foi o ERP (*Enterprise Resource Planning*), o qual t
 
 Os protótipos de interface foram criados no Figma, o qual pode ser acessado [clicando aqui](https://www.figma.com/file/xt11G5eRqHzFQquJmKjU5s/ERP---SI2?node-id=0%3A1)
 
+### Instruções para execução
+É necessário executar a aplicação em um servidor Web, pois a mesma depende de ECMAScript Modules (apenas disponíveis em ambientes seguros HTTP ou HTTPS).
+
+É recomendável usar a extensão [_Live Server_](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para o editor [_Visual Studio Code_](https://code.visualstudio.com/).
+
 ### Funcionalidades desenvolvidas
 1. Login e Logout
 2. Cadastro de novo usuário
