@@ -20,17 +20,22 @@ Os protótipos de interface foram criados no Figma, o qual pode ser acessado [cl
 1. Login e Logout
 2. Cadastro de novo usuário
 3. Criar novos vendedores (usuários do sistema)
-4. Estoque:
+  - Cadastrar Vendedor
+  - Excluir Vendedor
+  - Editar Vendedor 
+5. Estoque:
   - Listar produtos
   - Inserir produto
   - Excluir produto
   - Editar produtos
-5. Clientes
+6. Clientes
   - Listar clientes
   - Cadastrar clientes
   - Editar clientes
   - Remover clientes
-### Funcionalidades restantes
-- Vendas
-  - Realizar vendas para clientes da empresa
+7. Fornecedores
+  - Cadastrar fornecedor
+  - Excluir Fornecedor
+  - Editar Fornecedor 
+
 
