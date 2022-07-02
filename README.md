@@ -21,6 +21,8 @@ Os protótipos de interface foram criados no Figma, o qual pode ser acessado [cl
 
 É recomendável usar a extensão [_Live Server_](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para o editor [_Visual Studio Code_](https://code.visualstudio.com/).
 
+Após instalação, execute o arquivo *index.html* que está na raiz do diretório, pois o mesmo é a porta de entrada da aplicação.
+
 ### Funcionalidades desenvolvidas
 1. Login e Logout
 2. Cadastro de novo usuário
