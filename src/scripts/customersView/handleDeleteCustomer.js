@@ -1,6 +1,6 @@
 'use strict';
 
-import { LocalStorageManager } from "../../classes/utils/LocalStorageManager";
+import { LocalStorageManager } from "../../classes/utils/LocalStorageManager.js";
 
 /**
  * @param {string} customerId
@@ -8,7 +8,7 @@ import { LocalStorageManager } from "../../classes/utils/LocalStorageManager";
 export function handleDeleteCustomer(customerId) {
   const toRemoveCustomer = LocalStorageManager.getAll('customers').find((customer) => customer.id === customerId);
 
-  const wantsToRemoveCustomer = confirm(`Deseja remover o cliente ${toRemoveCustomer.name}`);
+  const wantsToRemoveCustomer = confirm(`Deseja remover o cliente ${toRemoveCustomer.name}?`);
   
   if (wantsToRemoveCustomer) {
     alert(`Cliente ${toRemoveCustomer.name} removido com sucesso!`);

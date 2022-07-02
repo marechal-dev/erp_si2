@@ -7,8 +7,17 @@ import { handleAddSeller } from './handleAddSeller.js';
 import { handleEditSeller } from './handleEditSeller.js';
 import { handleDeleteSeller } from './handleDeleteSeller.js';
 
+import { setDisplayedUserName } from '../setDisplayedUserName.js';
+import { handleLogout } from '../handleLogout.js';
+
 window.addEventListener('load', () => {
+  setDisplayedUserName();
+
   const sellersTableDontExist = !LocalStorageManager.tableExists('sellers');
+
+  const logoutButton = document.querySelector('#logoutButton');
+  logoutButton.addEventListener('click', () => handleLogout());
+
   if (sellersTableDontExist) {
     LocalStorageManager.createTable('sellers');
     return;

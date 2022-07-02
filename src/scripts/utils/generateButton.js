@@ -4,7 +4,8 @@
  * @param {string} id 
  * @param {string} jsIdentifier
  * @param {string} textContent
+ * @param {string} classes
  */
-export function generateButton(id, jsIdentifier, textContent) {
-  return `<button data-js-identifier="${jsIdentifier}" id="${id}" type="button">${textContent}</button>`;
+export function generateButton(id, jsIdentifier, textContent, classes) {
+  return `<button data-js-identifier="${jsIdentifier}" id="${id}" class="${classes}" type="button">${textContent}</button>`;
 }

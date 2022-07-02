@@ -30,7 +30,7 @@ loginForm.addEventListener('submit', (event) => {
 
     if (isPassowrdCorret) {
       LocalStorageManager.insert('loggedInUser', userData);
-      window.location.href = '../pages/dashboard.html';
+      window.location.href = '/dashboard/index.html';
     } else {
       alert('Senha incorreta, tente novamente!');
     }

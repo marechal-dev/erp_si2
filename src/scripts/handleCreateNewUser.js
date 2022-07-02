@@ -4,7 +4,7 @@ import { LocalStorageManager } from "../classes/utils/LocalStorageManager.js";
 
 import { User } from "../classes/entities/User.js";
 
-import { emailIsValid } from './validateEmail.js';
+import { emailIsValid } from './utils/validateEmail.js';
 
 const createUserForm = document.forms.namedItem('createUserForm');
 
@@ -17,13 +17,12 @@ window.addEventListener('load', () => {
 createUserForm.addEventListener('submit', () => {
   const {
     firstNameInput,
-    lastNameInput,
     emailInput,
     confirmEmailInput,
     passwordInput
   } = createUserForm;
 
-  const someFieldsAreEmpty = !firstNameInput.value || !lastNameInput.value || !emailInput.value || !confirmEmailInput.value || !passwordInput.value;
+  const someFieldsAreEmpty = !firstNameInput.value || !emailInput.value || !confirmEmailInput.value || !passwordInput.value;
   if (someFieldsAreEmpty) {
     alert('Revise os campos do formulário de cadastro.');
     return;
@@ -49,7 +48,7 @@ createUserForm.addEventListener('submit', () => {
     return;
   }
 
-  const newUser = new User(firstNameInput.value, lastNameInput.value, emailInput.value, passwordInput.value);
+  const newUser = new User(firstNameInput.value, emailInput.value, passwordInput.value);
 
   LocalStorageManager.insert('users', newUser);
 

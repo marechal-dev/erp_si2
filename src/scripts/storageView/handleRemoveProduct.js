@@ -4,16 +4,14 @@ import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js'
 
 const deleteProductButtonsList = document.querySelectorAll('.deleteProductButton');
 
-deleteProductButtonsList.forEach((button) => {
-  button.addEventListener('click', (event) => {
-    const productId = event.target.id;
+export function handleRemoveProduct(event) {
+  const productId = event.target.id;
 
-    const itemToRemove = LocalStorageManager.getAll('products').find((product) => product.id === productId);
+  const itemToRemove = LocalStorageManager.getAll('products').find((product) => product.id === productId);
 
-    LocalStorageManager.remove('products', itemToRemove);
+  LocalStorageManager.remove('products', itemToRemove);
 
-    alert(`Item ${itemToRemove.title} removido com sucesso`);
+  alert(`Item ${itemToRemove.title} removido com sucesso`);
 
-    window.location.reload();
-  });
-})
+  window.location.reload();
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPRM - Dashboard</title>
+
+    <link rel="shortcut icon" href="/public/images/logo.jpeg" type="image/x-icon">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700&display=swap">
+    <link rel="stylesheet" href="/src/styles/globals.css">
+    <link rel="stylesheet" href="/src/styles/customers_view/styles.css">
+</head>
+
+<body>
+    <aside class="aside-menu">
+        <h1 class="aside-menu__logo"> <a href="/dashboard/index.html">LPRM</a></h1>
+        <hr class="aside-menu__divider" />
+        <div class="user-info">
+            <img class=".user-info__icon" src="/public/images/user_icon.svg" alt="Ícone Usuário" />
+            <a class="user-info__user-name" href="/dashboard/edit_user.html"></a>
+        </div>
+        <hr class="aside-menu__divider" />
+        <nav class="navigation-menu">
+            <ul>
+                <li class="navigation-menu__item"><a href="/dashboard/index.html">Dashboard</a></li>
+                <li class="navigation-menu__item"><a href="/dashboard/storage_view.html">Estoque</a></li>
+                <li class="navigation-menu__item"><a href="/dashboard/suppliers_view.html">Fornecedores</a></li>
+                <li class="navigation-menu__item"><a href="/dashboard/customers_view.html">Clientes</a></li>
+                <li class="navigation-menu__item"><a href="/dashboard/sellers_view.html">Vendedores</a></li>
+            </ul>
+        </nav>
+        <hr class="aside-menu__divider" />
+        <span class="aside-menu__app-version">Versão 1.0</span>
+        <span id="logoutButton" class="aside-menu__logout">Sair</span>
+    </aside>
+    <main class="main-area">
+        <h2><u>Clientes</u></h2>
+        <button data-js-identifier="addButton" type="button" class="btn-add">Adicionar</button>
+        <table id="suppliers-table">
+            <tr>
+                <th>Identificador</th>
+                <th>Nome</th>
+                <th>Data de Criação</th>
+                <th>Ação (Editar)</th>
+                <th>Ação (Remover)</th>
+            </tr>
+
+        </table>
+    </main>
+
+    <script type="module" src="/src/scripts/customersView/setupView.js"></script>
+</body>
+
+</html>

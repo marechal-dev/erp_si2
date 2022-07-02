@@ -9,7 +9,7 @@
     <title>ERPM</title>
 
     <link rel="shortcut icon" href="../../public/images/logo.jpeg" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/cadastro.css">
+    <link rel="stylesheet" href="/src/styles/cadastro.css">
 
     <script src="https://use.fontawesome.com/5b286af670.js"></script>
 </head>
@@ -35,15 +35,9 @@
             <div class="card">
                 <div class="inserir">
                     <label for="firstNameInput">
-                        <span>Primeiro Nome</span>
+                        <span>Nome completo</span>
                     </label>
                     <input type="text" id="nome" name="firstNameInput" placeholder="Digite seu primeiro nome" required>
-                </div>
-                <div class="inserir">
-                    <label for="lastNameInput">
-                        <span>Último Nome</span>
-                    </label>
-                    <input type="text" id="ultimo-nome" name="lastNameInput" placeholder="Digite seu último nome" required>
                 </div>
                 <div class="inserir">
                     <label for="emailInput">
@@ -72,14 +66,14 @@
 
     <footer class="footer">
         <div class="social-icons">
-            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-            <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
-            <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+            <a href="#"><i title="Facebook" class="fa fa-facebook fa-lg"></i></a>
+                <a href="#"><i title="Instagram" class="fa fa-instagram fa-lg"></i></a>
+                <a href="#"><i title="Linkedin" class="fa fa-linkedin fa-lg"></i></a>
         </div>
         <p class="copyright">
             Copyright LPRM(c) 2022 Todos os direitos reservados.</br>
-            <a href="contato.html">Para mais informações, clique aqui.</a>
+            <a href="/pages/contato.html">Para mais informações, clique aqui.</a>
         </p>
     </footer>
-    <script type="module" src="../scripts/handleCreateNewUser.js" async></script>
+    <script type="module" src="/src/scripts/handleCreateNewUser.js" async></script>
 </body>

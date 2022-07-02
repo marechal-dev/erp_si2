@@ -63,7 +63,7 @@ export function handleAddSeller() {
   }
   
 
-  const newSeller = new SalesPerson(newSellerName, newSellerLastName, newSellerEmail, newSellerPassword);
+  const newSeller = new SalesPerson(newSellerName, newSellerEmail, newSellerPassword);
   LocalStorageManager.insert('sellers', newSeller);
 
   alert(`Vendedor ${newSeller.name} adicionado com sucesso!`);

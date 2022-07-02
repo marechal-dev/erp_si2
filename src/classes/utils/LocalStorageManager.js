@@ -103,14 +103,10 @@ export class LocalStorageManager {
     const toEditEntry = tableData.find((item) => item[itemIdentifierKeyName] === itemIdentifier);
 
     for (let key in data) {
-      for (let toEditKey in toEditEntry) {
-        if (key === toEditKey) {
-          toEditEntry[toEditKey] = data[key];           
-        }
-      }
+      toEditEntry[key] = data[key];
     }
 
-    localStorage.setItem('suppliers', JSON.stringify(tableData));
+    localStorage.setItem(tableName, JSON.stringify(tableData));
     
     return;
   }

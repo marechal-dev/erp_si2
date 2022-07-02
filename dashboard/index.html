@@ -29,26 +29,33 @@
         <li class="navigation-menu__item"><a href="/dashboard/suppliers_view.html">Fornecedores</a></li>
         <li class="navigation-menu__item"><a href="/dashboard/customers_view.html">Clientes</a></li>
         <li class="navigation-menu__item"><a href="/dashboard/sellers_view.html">Vendedores</a></li>
-        <li class="navigation-menu__item"><a href="/dashboard/selling_view.html">Vendas</a></li>
-        <li class="navigation-menu__item"><a href="/dashboard/storage_ressuply_view.html">Reposição de Estoque</a></li>
       </ul>
     </nav>
     <hr class="aside-menu__divider" />
     <span class="aside-menu__app-version">Versão 1.0</span>
+    <span id="logoutButton" class="aside-menu__logout">Sair</span>
   </aside>
   <main class="main-area">
     <div class="totalizers-container">
       <div class="totalizer-container">
         <span class="totalizer-container__title">Valor em Estoque</span>
-        <h2 class="totalizer-container__value">R$ 2000,00</h2>
+        <h2 id="storageValueTotal" class="totalizer-container__value"></h2>
       </div>
       <div class="totalizer-container">
         <span class="totalizer-container__title">Total em Estoque</span>
-        <h2 class="totalizer-container__value">100 un</h2>
+        <h2 id="storageQuantityTotal" class="totalizer-container__value"></h2>
       </div>
       <div class="totalizer-container">
-        <span class="totalizer-container__title">Total em Estoque</span>
-        <h2 class="totalizer-container__value">R$ 2000,00</h2>
+        <span class="totalizer-container__title">Total de Clientes registrados</span>
+        <h2 id="registeredCustomersTotal" class="totalizer-container__value"></h2>
+      </div>
+      <div class="totalizer-container">
+        <span class="totalizer-container__title">Total de Vendedores registrados</span>
+        <h2 id="registeredSellersTotal" class="totalizer-container__value"></h2>
+      </div>
+      <div class="totalizer-container">
+        <span class="totalizer-container__title">Total de Fornecedores registrados</span>
+        <h2 id="registeredSuppliersTotal" class="totalizer-container__value"></h2>
       </div>
     </div>
   </main>

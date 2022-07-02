@@ -11,6 +11,8 @@ export function handleAddCustomer() {
 
     LocalStorageManager.insert('customers', newCustomer);
 
+    alert(`Cliente ${newCustomer.name} criado com sucesso!`);
+
     return;
   }
 }

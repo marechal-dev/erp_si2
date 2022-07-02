@@ -5,7 +5,15 @@ import { Supplier } from '../../classes/entities/Supplier.js';
 
 import { generateButton } from '../utils/generateButton.js';
 
+import { setDisplayedUserName } from '../setDisplayedUserName.js';
+import { handleLogout } from '../handleLogout.js';
+
 window.addEventListener('load', () => {
+  setDisplayedUserName();
+
+  const logoutButton = document.querySelector('#logoutButton');
+  logoutButton.addEventListener('click', () => handleLogout());
+
   const suppliersTableDontExist = !LocalStorageManager.tableExists('suppliers');
 
   // Check if there is no data table for suppliers
@@ -31,7 +39,6 @@ window.addEventListener('load', () => {
   const removeButtonsList = document.querySelectorAll('[data-js-identifier="removeButton"]');
 
   // Loop in each list
-
   editButtonsList.forEach((button) => {
     button.addEventListener('click', (event) => {
       const itemId = event.target.id; // Get supplier id
@@ -77,8 +84,8 @@ window.addEventListener('load', () => {
     idCell.textContent = supplier.id;
     socialReasonCell.textContent = supplier.socialReason;
     createdAtCell.textContent = Intl.DateTimeFormat('pt-BR').format(new Date(supplier.createdAt)); // Format the date value using Intl formatter
-    editButtonCell.insertAdjacentHTML('afterbegin', `<td>${generateButton(String(supplier.id), 'editButton', 'Editar')}</td>`); // Insert a new button to edit supplier data by id
-    deleteButtonCell.insertAdjacentHTML('afterbegin', `<td>${generateButton(String(supplier.id), 'removeButton', 'Remover')}</td>`); // Insert a new button to remove a supplier by id
+    editButtonCell.insertAdjacentHTML('afterbegin', `<td>${generateButton(String(supplier.id), 'editButton', 'Editar', 'btn-edit')}</td>`); // Insert a new button to edit supplier data by id
+    deleteButtonCell.insertAdjacentHTML('afterbegin', `<td>${generateButton(String(supplier.id), 'removeButton', 'Remover', 'btn-remove')}</td>`); // Insert a new button to remove a supplier by id
   });
 }
 

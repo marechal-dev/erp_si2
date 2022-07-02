@@ -19,7 +19,7 @@
     <hr class="aside-menu__divider" />
     <div class="user-info">
       <img class=".user-info__icon" src="/public/images/user_icon.svg" alt="Ícone Usuário" />
-      <a class="user-info__user-name" href="/dashboard/edit_user.html">Fulano de Tal</a>
+      <a class="user-info__user-name" href="/dashboard/edit_user.html"></a>
     </div>
     <hr class="aside-menu__divider" />
     <nav class="navigation-menu">
@@ -29,15 +29,15 @@
         <li class="navigation-menu__item"><a href="/dashboard/suppliers_view.html">Fornecedores</a></li>
         <li class="navigation-menu__item"><a href="/dashboard/customers_view.html">Clientes</a></li>
         <li class="navigation-menu__item"><a href="/dashboard/sellers_view.html">Vendedores</a></li>
-        <li class="navigation-menu__item"><a href="/dashboard/selling_view.html">Vendas</a></li>
       </ul>
     </nav>
     <hr class="aside-menu__divider" />
     <span class="aside-menu__app-version">Versão 1.0</span>
+    <span id="logoutButton" class="aside-menu__logout">Sair</span>
   </aside>
   <main class="main-area">
     <h2>Fornecedores</h2>
-    <button data-js-identifier="addSupplierButton" type="button">Adicionar</button>
+    <button data-js-identifier="addSupplierButton" class="btn-add" type="button">Adicionar</button>
     <table id="suppliers-table">
       <tr>
         <th>Identificador</th>

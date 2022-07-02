@@ -2,21 +2,68 @@
 
 import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js';
 
+import { setDisplayedUserName } from '../setDisplayedUserName.js'
+import { handleLogout } from '../handleLogout.js';
+
 window.addEventListener('load', () => {
   if (userIsLoggedIn()) {
-    const loggedUser = LocalStorageManager.getAll('loggendInUser')[0];
-    const sellsTableDoesNotExist = LocalStorageManager.tableExists('sells');
-  
-    setDisplayedUserName(loggedUser.name, loggedUser.lastName);
-  
-    if (sellsTableDoesNotExist) {
-      LocalStorageManager.createTable('sells');
+    setDisplayedUserName();
+
+    const logoutButtonElement = document.querySelector('#logoutButton');
+    logoutButtonElement.addEventListener('click', () => handleLogout());
+
+    const productsTableDontExist = !LocalStorageManager.tableExists('products');
+    const customersTableDontExist = !LocalStorageManager.tableExists('customers');
+    const sellersTableDontExist = !LocalStorageManager.tableExists('sellers');
+    const suppliersTableDontExist = !LocalStorageManager.tableExists('suppliers');
+
+    if (productsTableDontExist) {
+      LocalStorageManager.createTable('products');
     }
+
+    if (customersTableDontExist) {
+      LocalStorageManager.createTable('customers');
+    }
+
+    if (sellersTableDontExist) {
+      LocalStorageManager.createTable('sellers');
+    }
+
+    if (suppliersTableDontExist) {
+      LocalStorageManager.createTable('suppliers');
+    }
+
+    const productsData = LocalStorageManager.getAll('products');
+    const customersData = LocalStorageManager.getAll('customers');
+    const sellersData = LocalStorageManager.getAll('sellers');
+    const suppliersData = LocalStorageManager.getAll('suppliers');
+
+    const totalStorageValueElement = document.querySelector('#storageValueTotal');
+    const totalStorageQuantityElement = document.querySelector('#storageQuantityTotal');
+    const totalRegisteredCustomersElement = document.querySelector('#registeredCustomersTotal');
+    const totalRegisteredSellersElement = document.querySelector('#registeredSellersTotal');
+    const totalRegisteredSuppliersElement = document.querySelector('#registeredSuppliersTotal');
+
+    let totalStorageValueSum = 0;
+    let totalStorageQuantitySum = 0;
+    productsData.forEach((product) => {
+      totalStorageValueSum += Number(product.price);
+      totalStorageQuantitySum += Number(product.quantity);
+    });
+
+    totalStorageValueElement.textContent = Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(totalStorageValueSum);
+    totalStorageQuantityElement.textContent = totalStorageQuantitySum;
+    totalRegisteredCustomersElement.textContent = customersData.length;
+    totalRegisteredSellersElement.textContent = sellersData.length;
+    totalRegisteredSuppliersElement.textContent = suppliersData.length;
+
+    return;
   } else {
     window.location.href = '/index.html';
   }
-
-  return;
 });
 
 /**
@@ -33,13 +80,4 @@ function userIsLoggedIn() {
   return false;
 }
 
-/**
- * Set the displayed name to the name + last name from the currently logged user
- * 
- * @param {string} name 
- * @param {string} lastName 
- */
-function setDisplayedUserName(name, lastName) {
-  const loggedUserNameElement = document.querySelector('.user-info__user-name');
-  loggedUserNameElement.textContent = `${name} ${lastName}`
-}
+

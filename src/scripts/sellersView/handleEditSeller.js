@@ -1,6 +1,6 @@
 'use strict';
 
-import { LocalStorageManager } from '../../classes/utils/LocalStorageManager';
+import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js';
 
 /**
  * 

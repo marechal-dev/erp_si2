@@ -4,13 +4,6 @@ import { LocalStorageManager } from '../../classes/utils/LocalStorageManager.js'
 
 import { Product } from '../../classes/entities/Product.js';
 
-const productTitle = document.querySelector('[data-id="productTitleInput"]');
-const productPrice = document.querySelector('[data-id="productPriceInput"]');
-const productQuantity = document.querySelector('[data-id="productQuantityInput"]');
-const productDescription = document.querySelector('[data-id="productDescriptionInput"]');
-
-const insertProductButton = document.querySelector('[data-id="insertProductButton"]');
-
 export function handleCreateNewProduct() {
   let newProduct;
   let newProductTitle;
@@ -59,28 +52,28 @@ export function handleCreateNewProduct() {
       continue;
     }
 
+
     if (Number(quantityPromptValue) <= 0) {
       alert('Por favor, insira um preço válido (maior que 0)');
       continue;
     }
 
     if (quantityPromptValue) {
-      newProductQuantity = quantityPromptValue;
+      newProductQuantity = Number(quantityPromptValue);
       break;
     }
   }
 
   const descriptionPromptValue = prompt('Digite a descrição do produto (pode ser deixada em branco):');
 
-  if (descriptionPromptValue) {
-    newProductQuantity = descriptionPromptValue || '---';
-  }
+  newProductDescription = descriptionPromptValue || '---';
+
 
   newProduct = new Product(
-    productTitle.value,
-    parseFloat(productPrice.value),
-    parseInt(productQuantity.value),
-    productDescription.value
+    newProductTitle,
+    parseFloat(newProductPrice),
+    parseInt(newProductQuantity),
+    newProductDescription
   );
 
   LocalStorageManager.insert('products', newProduct);

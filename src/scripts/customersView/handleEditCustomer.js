@@ -34,8 +34,6 @@ export function handleEditCustomer(customerId) {
     } else {
       payload.name = customerData.name;
 
-      alert(`Cliente ${customerData.name} alterado com sucesso!`);
-
       LocalStorageManager.edit('customers', 'id', customerId, payload);
 
       break;

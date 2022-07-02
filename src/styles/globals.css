@@ -163,3 +163,9 @@ ul {
   border-radius: 10px;
   cursor: pointer;
 }
+
+.aside-menu__logout {
+  font-style: italic;
+  font-weight: normal;
+  cursor: pointer;
+}
