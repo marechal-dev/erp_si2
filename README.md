@@ -30,5 +30,13 @@ Os protótipos de interface foram criados no Figma, o qual pode ser acessado [cl
   - Cadastrar clientes
   - Editar clientes
   - Remover clientes
+6. Fornecedores
+  - Cadastrar fornecedor
+  - Excluir Fornecedor
+  - Editar Fornecedor 
+7. Vendedores
+  - Cadastrar Vendedor
+  - Excluir Vendedor
+  - Editar Vendedor 
 
 
