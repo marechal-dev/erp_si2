@@ -30,7 +30,5 @@ Os protótipos de interface foram criados no Figma, o qual pode ser acessado [cl
   - Cadastrar clientes
   - Editar clientes
   - Remover clientes
-### Funcionalidades restantes
-- Vendas
-  - Realizar vendas para clientes da empresa
+
 
